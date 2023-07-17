@@ -1,0 +1,38 @@
+nav {
+    display: flex;
+    justify-content: end;
+    height: 5vh;
+}
+
+nav a {
+    margin-right: 2vw;
+    font-size: 25px;
+    font-family: "Lunasima", sans-serif;
+    color: rgb(240, 243, 248);
+    text-decoration: none;
+}
+
+
+header {
+    height: 100vh;
+    max-width: 100%;
+    background-image: url("../imgs/bg.jpg");
+    background-size: cover;
+}
+
+/*.name-title {*/
+/*    color: rgb(240, 243, 248);*/
+/*    font-family: "Lunasima", sans-serif;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+.name-title {
+    position: absolute;
+    bottom: 20%;
+    left: 15%;
+    transform: translateX(-10%);
+    font-size: 2.5rem; /* Adjust the font size as needed */
+    color: rgb(240, 243, 248); /* Adjust the color of the text */
+    padding: 10px 20px; /* Add padding to the text for better readability */
+}
