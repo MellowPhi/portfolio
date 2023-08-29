@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
     <nav>
         <a href="#about">About</a> <br>
@@ -16,14 +17,13 @@
         <a href="#contacts">Contact</a> <br>
         <a>Home</a>
     </nav>
-    <h1 class="name-title">Pip Inc Tom,<br>
+    <h1 class="name-title">Pippen Tom,<br>
         Fullstack Developer</h1>
 </header>
 
 <section id="about">
-
-    <h2>About me</h2>
     <img class="profile-picture" src="../imgs/tom.jpeg" height=300 width=300>
+    <h2>About me</h2>
     <p>
         Hi, I am Pippen, I am been a junior back-end developer for about 4 months now.
         I love solving problems back end problems espcially with different positions.
@@ -33,21 +33,37 @@
 
 <section id="portfolio">
     <h2>Portfolio</h2>
-    <img class="project-flashcards" src="../imgs/flashcards.jpg" height="400" width="700">
-    <p>FlashCards</p>
-    <p>A flash card project focusing on countries's capital.</p>
+    <div class="portfolio-project">
+        <img class="project-flashcards" src="../imgs/project1.png" height="400" width="700">
+        <p>FlashCards</p>
+        <p>A flash card project focusing on countries's capital.</p>
+    </div>
+
+    <div class="portfolio-project">
+        <img class="project-flashcards" src="../imgs/project2.png" height="400" width="700">
+        <p>Virtual Piano</p>
+        <p>Web browser piano</p>
+    </div>
+
 
 </section>
 
 <section id="contacts">
     <h2> Contacts</h2>
-    <p> Connect with me on LinkedIn or email.</p>
-    <img src="../imgs/github.svg" height="50" width="50">
-    <img src="../imgs/instagram 1.svg" height="50" width="50">
-    <img src="../imgs/twitter.svg" height="50" width="50">
-    <img src="../imgs/facebook.svg" height="50" width="50">
+    <p> You can contact me at <a href="mailto:test@hyperskill.org">test@hyperskill.org</a></p>
+    <p>or phone - <a href="tel:1234567890">1234567890</a></p>
+    <div id="contacts-social">
+        <img src="../imgs/github.svg" height="50" width="50">
+        <img src="../imgs/instagram 1.svg" height="50" width="50">
+        <img src="../imgs/twitter.svg" height="50" width="50">
+        <img src="../imgs/facebook.svg" height="50" width="50">
+    </div>
+
 </section>
 
-<footer> Pip Tom, 2023</footer>
+<footer>
+    <h2>Pip Tom</h2>
+    <p>2023</p>
+</footer>
 </body>
 </html>
