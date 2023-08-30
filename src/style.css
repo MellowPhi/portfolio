@@ -1,19 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
 body {
     margin: 0;
     padding: 10px;
+    font-family: "Raleway";
 }
 
-nav {
+.navbar {
     display: flex;
     justify-content: end;
     height: 8vh;
     background-color: rgb(27,18,17);
 }
 
-nav a {
+.navbar a {
     margin-right: 2vw;
     font-size: 25px;
-    font-family: "Lunasima", sans-serif;
     color: rgb(240, 243, 248);
     text-decoration: none;
     display: flex;
@@ -24,8 +26,11 @@ nav a {
 header {
     height: 100vh;
     max-width: 100%;
-    background-image: url("../imgs/bg.jpg");
     background-size: cover;
+    background: url("../imgs/bg.jpg") no-repeat fixed center center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
 }
 
 .name-title {
@@ -76,24 +81,6 @@ footer {
     text-align: center;
     height: 3rem;
 }
-
-@keyframes change-font-size {
-    from {
-        height: 10%;
-    }
-    50% {
-        height: 30%;
-    }
-    to {
-        height: 10%;
-    }
-}
-
-h1 {
-    animation-name: change-font-size;
-    animation-duration: 3s;
-}
-
 
 .window{
     display: none;
@@ -172,3 +159,4 @@ h2{
         opacity: 1;
     }
 }
+
