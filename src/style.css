@@ -38,10 +38,12 @@ header {
     padding: 10px 20px; /* Add padding to the text for better readability */
 }
 
-#about {
+#about > div{
     background-color: darkgrey;
-    height: 40vh;
+    padding: 10px;
+    height: 50vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -73,4 +75,21 @@ footer {
     color: white;
     text-align: center;
     height: 3rem;
+}
+
+@keyframes change-font-size {
+    from {
+        height: 10%;
+    }
+    50% {
+        height: 30%;
+    }
+    to {
+        height: 10%;
+    }
+}
+
+h1 {
+    animation-name: change-font-size;
+    animation-duration: 3s;
 }
