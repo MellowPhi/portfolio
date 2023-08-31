@@ -1,162 +1,268 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
+html,
 body {
-    margin: 0;
-    padding: 10px;
-    font-family: "Raleway";
+  margin: 0;
+  height: 100%;
 }
 
-.navbar {
-    display: flex;
-    justify-content: end;
-    height: 8vh;
-    background-color: rgb(27,18,17);
+* {
+  font-family: "Raleway", serif;
+  box-sizing: border-box;
 }
 
-.navbar a {
-    margin-right: 2vw;
-    font-size: 25px;
-    color: rgb(240, 243, 248);
-    text-decoration: none;
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #00baf0;
+  background: linear-gradient(to left, #f46b45, #eea849);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+  height: 50px;
+  padding: 1em;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hamburger > a {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/*.hamburger {*/
+/*  display: none;*/
+/*}*/
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 900px) {
+  .menu-button-container {
     display: flex;
+  }
+  .hamburger {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
     align-items: center;
+  }
+  /* These two are to toggle the menu down and up in smaller screen */
+  #menu-toggle ~ .hamburger a {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .hamburger a {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .hamburger > a {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+  .hamburger > a:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
 }
 
-
+/*------------------------------------rest of the body------------------------------------*/
 header {
-    height: 100vh;
-    max-width: 100%;
-    background-size: cover;
-    background: url("../imgs/bg.jpg") no-repeat fixed center center;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
+  height: 100vh;
+  max-width: 100%;
+  background-size: cover;
+  background: url("../imgs/bg.jpg") no-repeat fixed center center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
 }
 
 .name-title {
-    position: absolute;
-    bottom: 15%;
-    left: 15%;
-    transform: translateX(-10%);
-    font-size: 2.5rem; /* Adjust the font size as needed */
-    color: rgb(240, 243, 248); /* Adjust the color of the text */
-    padding: 10px 20px; /* Add padding to the text for better readability */
+  position: absolute;
+  bottom: 15%;
+  left: 15%;
+  transform: translateX(-10%);
+  font-size: 2.5rem; /* Adjust the font size as needed */
+  color: rgb(240, 243, 248); /* Adjust the color of the text */
+  padding: 10px 20px; /* Add padding to the text for better readability */
 }
 
-#about > div{
-    background-color: darkgrey;
-    padding: 10px;
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#about > div {
+  background-color: darkgrey;
+  padding: 10px;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-picture {
-    padding: 5px;
-    max-height: 100%;
-    max-width: 100%;
+  padding: 5px;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 #portfolio {
-    background-color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-
 #contacts {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    height: 3rem;
+  background-color: black;
+  color: white;
+  text-align: center;
+  height: 3rem;
 }
 
-.window{
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    border: 3px solid black;
-    transform: translate(-50%, -50%);
-    border-radius: 5px;
-    z-index: 1;
-    background-color: white;
-    width: 500px;
-    height: 250px;
-    max-width: 80%;
-    overflow: auto;
+.window {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border: 3px solid black;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  z-index: 1;
+  background-color: white;
+  width: 500px;
+  height: 250px;
+  max-width: 80%;
+  overflow: auto;
 }
 
-
-.window-header{
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-    height: 80px;
+.window-header {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  height: 80px;
 }
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
-h2{
-    display: flex;
-    align-items: center;
-}
-
-#openwin{
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: blueviolet;
-    color: white;
-    font-size: 15px;
-    margin: 10px;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0);
+h2 {
+  display: flex;
+  align-items: center;
 }
 
-#closewin{
-    border: 1px solid black;
-    background-color:black;
-    color: white;
-    font-size: 15px;
-    padding: 10px;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0);
+#openwin {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: blueviolet;
+  color: white;
+  font-size: 15px;
+  margin: 10px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
 
+#closewin {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .window-body {
-    padding: 10px 10px 10px 10px;
-    font-family: 'Open Sans Condensed', sans-serif;
+  padding: 10px 10px 10px 10px;
+  font-family: "Open Sans Condensed", sans-serif;
 }
 
-
-.window-content{
-    position: relative;
-    animation: windowsani 0.4s;
+.window-content {
+  position: relative;
+  animation: windowsani 0.4s;
 }
 
 @keyframes windowsani {
-    from {
-        top: -300px;
-        opacity: 0;
-    }
-    to {
-        top: 0;
-        opacity: 1;
-    }
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
-
